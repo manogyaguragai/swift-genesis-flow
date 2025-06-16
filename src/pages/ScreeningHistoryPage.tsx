@@ -176,7 +176,7 @@ const ScreeningHistoryPage: React.FC = () => {
                   </div>
                 ) : (
                   <>
-                    <div className="space-y-3 max-h-80 sm:max-h-96 overflow-y-auto mb-4">
+                    <div className="space-y-3 mb-4">
                       {screeningRuns.map((run) => (
                         <div
                           key={run.id}
@@ -308,7 +308,7 @@ const ScreeningHistoryPage: React.FC = () => {
                     <h3 className="text-base sm:text-lg font-bold font-inter text-slate-900 mb-4">
                       Candidates ({selectedRun.candidates.length})
                     </h3>
-                    <div className="space-y-4 max-h-80 sm:max-h-96 overflow-y-auto">
+                    <div className="space-y-4">
                       {selectedRun.candidates.map((candidate, index) => (
                         <div
                           key={candidate.resume_id}
