@@ -150,10 +150,10 @@ const ScreeningHistoryPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Main Content */}
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 sm:gap-8">
-            {/* Left Side - Screening Runs List */}
-            <div className="xl:col-span-1">
+          {/* Main Content - Updated grid layout for wider right column */}
+          <div className="grid grid-cols-1 xl:grid-cols-5 gap-6 sm:gap-8">
+            {/* Left Side - Screening Runs List (smaller width) */}
+            <div className="xl:col-span-2">
               <div className="bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-glass border border-white/50 p-4 sm:p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-lg sm:text-xl font-bold font-inter text-slate-900">
@@ -265,8 +265,8 @@ const ScreeningHistoryPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Side - Run Details */}
-            <div className="xl:col-span-2">
+            {/* Right Side - Run Details (wider width) */}
+            <div className="xl:col-span-3">
               {selectedRun ? (
                 <div className="bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-glass border border-white/50 p-4 sm:p-6 animate-fade-in">
                   <div className="mb-4 sm:mb-6">

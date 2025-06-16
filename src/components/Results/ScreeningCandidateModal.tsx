@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { X, User, Star, Brain, GraduationCap, Briefcase, AlertTriangle } from 'lucide-react';
+import { X, User, Star, Brain, GraduationCap, Briefcase, AlertTriangle, MessageSquare, Target, Zap } from 'lucide-react';
 import { ScreeningCandidate } from '../../services/api';
 
 interface ScreeningCandidateModalProps {
@@ -12,9 +12,37 @@ export const ScreeningCandidateModal: React.FC<ScreeningCandidateModalProps> = (
   candidate,
   onClose
 }) => {
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty?.toLowerCase()) {
+      case 'easy':
+        return 'bg-green-100 text-green-800 border-green-200';
+      case 'medium':
+        return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+      case 'hard':
+        return 'bg-red-100 text-red-800 border-red-200';
+      default:
+        return 'bg-slate-100 text-slate-800 border-slate-200';
+    }
+  };
+
+  const getSkillTypeColor = (skillType: string) => {
+    switch (skillType?.toLowerCase()) {
+      case 'technical':
+        return 'bg-blue-100 text-blue-800 border-blue-200';
+      case 'behavioral':
+        return 'bg-purple-100 text-purple-800 border-purple-200';
+      case 'conceptual':
+        return 'bg-indigo-100 text-indigo-800 border-indigo-200';
+      case 'practical':
+        return 'bg-teal-100 text-teal-800 border-teal-200';
+      default:
+        return 'bg-gray-100 text-gray-800 border-gray-200';
+    }
+  };
+
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-glass border border-white/50 w-full max-w-6xl max-h-[90vh] overflow-hidden animate-fade-in">
+      <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-glass border border-white/50 w-full max-w-7xl max-h-[90vh] overflow-hidden animate-fade-in">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-white/30">
           <div className="flex items-center space-x-3">
@@ -36,7 +64,7 @@ export const ScreeningCandidateModal: React.FC<ScreeningCandidateModalProps> = (
 
         {/* Content */}
         <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
             {/* Left Column - Scores */}
             <div className="space-y-4">
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-4 rounded-xl border border-blue-200">
@@ -57,7 +85,7 @@ export const ScreeningCandidateModal: React.FC<ScreeningCandidateModalProps> = (
 
               <div className="bg-gradient-to-br from-purple-50 to-violet-50 p-4 rounded-xl border border-purple-200">
                 <div className="flex items-center space-x-2 mb-2">
-                  <User className="w-4 h-4 text-purple-600" />
+                  <MessageSquare className="w-4 h-4 text-purple-600" />
                   <h3 className="font-semibold text-purple-900">Questions Generated</h3>
                 </div>
                 <div className="text-2xl font-bold text-purple-900">
@@ -97,10 +125,17 @@ export const ScreeningCandidateModal: React.FC<ScreeningCandidateModalProps> = (
                   {candidate.experience_highlights}
                 </p>
               </div>
+
+              <div>
+                <h3 className="font-semibold text-slate-900 mb-3">AI Justification</h3>
+                <p className="text-sm text-slate-700 bg-gradient-to-br from-slate-50 to-blue-50 p-3 rounded-xl border border-white/50">
+                  {candidate.ai_justification}
+                </p>
+              </div>
             </div>
 
-            {/* Right Column - Skills and Gaps */}
-            <div className="space-y-4">
+            {/* Right Column - Skills, Gaps, and Questions */}
+            <div className="lg:col-span-2 space-y-4">
               <div>
                 <h3 className="font-semibold text-slate-900 mb-3">Skills Assessment</h3>
                 
@@ -161,12 +196,39 @@ export const ScreeningCandidateModal: React.FC<ScreeningCandidateModalProps> = (
                 </div>
               )}
 
-              <div>
-                <h3 className="font-semibold text-slate-900 mb-3">AI Justification</h3>
-                <p className="text-sm text-slate-700 bg-gradient-to-br from-slate-50 to-blue-50 p-3 rounded-xl border border-white/50">
-                  {candidate.ai_justification}
-                </p>
-              </div>
+              {/* Generated Questions Section */}
+              {candidate.questions_generated && candidate.generated_questions.length > 0 && (
+                <div>
+                  <div className="flex items-center space-x-2 mb-3">
+                    <MessageSquare className="w-4 h-4 text-purple-600" />
+                    <h3 className="font-semibold text-slate-900">Generated Interview Questions</h3>
+                  </div>
+                  <div className="space-y-3 max-h-80 overflow-y-auto">
+                    {candidate.generated_questions.map((question, index) => (
+                      <div key={index} className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-white/50 shadow-sm">
+                        <div className="flex items-start justify-between mb-2">
+                          <div className="flex items-center space-x-2">
+                            <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xs">
+                              {index + 1}
+                            </div>
+                            <div className="flex space-x-2">
+                              <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getSkillTypeColor(question.skill_type)}`}>
+                                {question.skill_type}
+                              </span>
+                              <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getDifficultyColor(question.difficulty)}`}>
+                                {question.difficulty}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <p className="text-sm text-slate-700 leading-relaxed">
+                          {question.question}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
