@@ -4,7 +4,7 @@ import { ProtectedRoute } from '../components/Auth/ProtectedRoute';
 import { getScreeningRuns, ScreeningRun, ScreeningRunsResponse } from '../services/api';
 import { ScreeningJobDetailsModal } from '../components/Results/ScreeningJobDetailsModal';
 import { ScreeningCandidateModal } from '../components/Results/ScreeningCandidateModal';
-import { Calendar, Clock, Users, FileText, ChevronRight, Search, Eye, ChevronLeft, Briefcase } from 'lucide-react';
+import { Calendar, Clock, Users, FileText, ChevronRight, Search, Eye, ChevronLeft, Briefcase, ArrowUp } from 'lucide-react';
 import { format } from 'date-fns';
 import {
   Pagination,
@@ -27,6 +27,7 @@ const ScreeningHistoryPage: React.FC = () => {
   const [endDate, setEndDate] = useState<string>('');
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize] = useState(10);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Set default dates (last 30 days)
   useEffect(() => {
@@ -36,6 +37,23 @@ const ScreeningHistoryPage: React.FC = () => {
     setEndDate(format(today, 'yyyy-MM-dd'));
     setStartDate(format(thirtyDaysAgo, 'yyyy-MM-dd'));
   }, []);
+
+  // Handle scroll to show/hide scroll-to-top button
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   const fetchScreeningRuns = async (page: number = 1) => {
     if (!user?.userId || !startDate || !endDate) return;
@@ -192,11 +210,13 @@ const ScreeningHistoryPage: React.FC = () => {
                               className="flex-1 text-left"
                             >
                               <p className="font-medium text-slate-900 truncate text-sm sm:text-base">
-                                Run #{run.id.slice(-8)}
+                                {run.job_role}
                               </p>
-                              <p className="text-xs text-slate-600 mt-1">
-                                {formatDateTime(run.run_start_time)}
-                              </p>
+                              <div className="mt-1">
+                                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-gradient-to-r from-primary/10 to-secondary/10 text-primary border border-primary/20">
+                                  {formatDateTime(run.run_start_time)}
+                                </span>
+                              </div>
                             </button>
                             <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0 ml-2" />
                           </div>
@@ -408,6 +428,17 @@ const ScreeningHistoryPage: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Scroll to Top Button */}
+        {showScrollTop && (
+          <button
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-gradient-to-r from-primary to-secondary text-white rounded-full shadow-lg hover:scale-110 transition-all duration-300 flex items-center justify-center animate-fade-in"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp className="w-5 h-5" />
+          </button>
+        )}
 
         {/* Modals */}
         {showJobModal && selectedRun && (
