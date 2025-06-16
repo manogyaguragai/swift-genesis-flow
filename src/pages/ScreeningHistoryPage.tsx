@@ -104,12 +104,12 @@ const ScreeningHistoryPage: React.FC = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
           {/* Header */}
           <div className="mb-6 sm:mb-8 animate-fade-in">
-            <h1 className="text-2xl sm:text-3xl font-bold font-inter text-slate-900 mb-2">
+            {/* <h1 className="text-2xl sm:text-3xl font-bold font-inter text-slate-900 mb-2">
               Screening History
             </h1>
             <p className="text-slate-600 font-ibm text-sm sm:text-base">
               View your past candidate screening runs and results
-            </p>
+            </p> */}
           </div>
 
           {/* Date Filter Card */}
