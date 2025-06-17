@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useCallback, useMemo } from "react";
 import "./ProfileCard.css";
 
@@ -22,10 +21,10 @@ interface ProfileCardProps {
 }
 
 const DEFAULT_BEHIND_GRADIENT =
-  "radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),hsla(222,47%,60%,var(--card-opacity)) 4%,hsla(222,47%,50%,calc(var(--card-opacity)*0.75)) 10%,hsla(263,60%,70%,calc(var(--card-opacity)*0.5)) 50%,hsla(263,60%,60%,0) 100%),radial-gradient(35% 52% at 55% 20%,#2563eb 0%,#073aff00 100%),radial-gradient(100% 100% at 50% 50%,#8b5cf6 1%,#073aff00 76%),conic-gradient(from 124deg at 50% 50%,#2563eb 0%,#8b5cf6 40%,#8b5cf6 60%,#2563eb 100%)";
+  "radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y),hsla(222,47%,40%,var(--card-opacity)) 4%,hsla(222,47%,30%,calc(var(--card-opacity)*0.75)) 10%,hsla(263,60%,45%,calc(var(--card-opacity)*0.5)) 50%,hsla(263,60%,35%,0) 100%),radial-gradient(35% 52% at 55% 20%,#2563eb40 0%,#073aff00 100%),radial-gradient(100% 100% at 50% 50%,#8b5cf640 1%,#073aff00 76%),conic-gradient(from 124deg at 50% 50%,#2563eb60 0%,#8b5cf660 40%,#8b5cf660 60%,#2563eb60 100%)";
 
 const DEFAULT_INNER_GRADIENT =
-  "linear-gradient(145deg,#2563eb8c 0%,#8b5cf644 100%)";
+  "linear-gradient(145deg,#25639950 0%,#8b5cf630 100%)";
 
 const ANIMATION_CONFIG = {
   SMOOTH_DURATION: 600,
@@ -53,15 +52,15 @@ const easeInOutCubic = (x: number): number =>
   x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 
 const ProfileCardComponent: React.FC<ProfileCardProps> = ({
-  avatarUrl = "/logo.png",
-  iconUrl,
+  avatarUrl = "/lovable-uploads/09dea75c-e78c-44d5-927f-ad644c2f276f.png",
+  iconUrl = "/logo.png",
   grainUrl,
   behindGradient,
   innerGradient,
   showBehindGradient = true,
   className = "",
   enableTilt = true,
-  miniAvatarUrl,
+  miniAvatarUrl = "/logo.png",
   name = "Manogya Guragai",
   title = "AI Developer",
   handle = "manogyaguragai",

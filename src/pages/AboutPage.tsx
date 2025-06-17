@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Users, Brain, Target, Shield, Award, Sparkles } from 'lucide-react';
 import { GlareCard } from '../components/ui/glare-card';
@@ -121,7 +120,7 @@ const AboutPage: React.FC = () => {
               title="AI Developer"
               handle="manogyaguragai"
               contactText="Contact Me"
-              avatarUrl="/logo.png"
+              avatarUrl="/lovable-uploads/09dea75c-e78c-44d5-927f-ad644c2f276f.png"
               miniAvatarUrl="/logo.png"
               showUserInfo={true}
               enableTilt={true}
