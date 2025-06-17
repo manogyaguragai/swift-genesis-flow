@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Users, Brain, Target, Shield, Award, Sparkles } from 'lucide-react';
 import { GlareCard } from '../components/ui/glare-card';
@@ -79,7 +80,7 @@ const AboutPage: React.FC = () => {
           ))}
         </div>
 
-        {/* Mission Section - Moved above Why Choose Kandidex */}
+        {/* Mission Section */}
         <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl p-12 border border-primary/10 shadow-glass animate-fade-in mb-20" style={{ animationDelay: '1s' }}>
           <div className="text-center">
             <div className="flex justify-center mb-6">
@@ -120,7 +121,7 @@ const AboutPage: React.FC = () => {
               title="AI Developer"
               handle="manogyaguragai"
               contactText="Contact Me"
-              avatarUrl="/lovable-uploads/09dea75c-e78c-44d5-927f-ad644c2f276f.png"
+              avatarUrl="/lovable-uploads/21c6da31-d874-4212-a86d-884c85206837.png"
               miniAvatarUrl="/logo.png"
               showUserInfo={true}
               enableTilt={true}
