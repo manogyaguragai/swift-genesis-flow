@@ -52,15 +52,15 @@ const easeInOutCubic = (x: number): number =>
   x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 
 const ProfileCardComponent: React.FC<ProfileCardProps> = ({
-  avatarUrl = "/lovable-uploads/09dea75c-e78c-44d5-927f-ad644c2f276f.png",
-  iconUrl = "/logo.png",
+  avatarUrl = "/black.png",
+  iconUrl = "/gradient.png",
   grainUrl,
   behindGradient,
   innerGradient,
   showBehindGradient = true,
   className = "",
   enableTilt = true,
-  miniAvatarUrl = "/logo.png",
+  miniAvatarUrl = "/gradient.png",
   name = "Manogya Guragai",
   title = "AI Developer",
   handle = "manogyaguragai",
@@ -280,7 +280,9 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
               }}
             />
             {showUserInfo && (
-              <div className="pc-user-info">
+              <div className="pc-user-info"
+               style={{ position: 'fixed', zIndex: 99999}}
+               >
                 <div className="pc-user-details">
                   <div className="pc-mini-avatar">
                     <img

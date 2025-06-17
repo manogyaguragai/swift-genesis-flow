@@ -121,8 +121,8 @@ const AboutPage: React.FC = () => {
               title="AI Developer"
               handle="manogyaguragai"
               contactText="Contact Me"
-              avatarUrl="/lovable-uploads/21c6da31-d874-4212-a86d-884c85206837.png"
-              miniAvatarUrl="/logo.png"
+              avatarUrl="/black.png"
+              miniAvatarUrl="/gradient.png"
               showUserInfo={true}
               enableTilt={true}
               onContactClick={handleContactClick}
