@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { Users, Brain, Target, Shield, Award, Sparkles } from 'lucide-react';
 import { GlareCard } from '../components/ui/glare-card';
 import { FeatureCards } from '../components/ui/feature-cards';
+import ProfileCard from '../components/ui/ProfileCard';
 
 const AboutPage: React.FC = () => {
   const stats = [
@@ -37,6 +39,10 @@ const AboutPage: React.FC = () => {
       animationDelay: 600,
     }
   ];
+
+  const handleContactClick = () => {
+    window.open('https://www.linkedin.com/in/manogya-guragai-1bb318200/', '_blank');
+  };
 
   return (
     <div className="pt-32 min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 animate-fade-in">
@@ -74,18 +80,8 @@ const AboutPage: React.FC = () => {
           ))}
         </div>
 
-        {/* Features Section using FeatureCards */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-bold font-inter text-slate-900 text-center mb-12 animate-fade-in" style={{ animationDelay: '1s' }}>
-            Why Choose <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Kandidex?</span>
-          </h2>
-          <div className="animate-fade-in" style={{ animationDelay: '1.2s' }}>
-            <FeatureCards features={aboutFeatures} />
-          </div>
-        </div>
-
-        {/* Mission Section */}
-        <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl p-12 border border-primary/10 shadow-glass animate-fade-in" style={{ animationDelay: '2s' }}>
+        {/* Mission Section - Moved above Why Choose Kandidex */}
+        <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl p-12 border border-primary/10 shadow-glass animate-fade-in mb-20" style={{ animationDelay: '1s' }}>
           <div className="text-center">
             <div className="flex justify-center mb-6">
               <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center shadow-glow-blue">
@@ -98,6 +94,39 @@ const AboutPage: React.FC = () => {
               of all sizes. We envision a future where every hiring decision is data-driven, unbiased, 
               and leads to better outcomes for both employers and candidates.
             </p>
+          </div>
+        </div>
+
+        {/* Features Section using FeatureCards */}
+        <div className="mb-20">
+          <h2 className="text-3xl font-bold font-inter text-slate-900 text-center mb-12 animate-fade-in" style={{ animationDelay: '1.2s' }}>
+            Why Choose <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Kandidex?</span>
+          </h2>
+          <div className="animate-fade-in" style={{ animationDelay: '1.4s' }}>
+            <FeatureCards features={aboutFeatures} />
+          </div>
+        </div>
+
+        {/* Profile Card Section */}
+        <div className="text-center mb-12 animate-fade-in" style={{ animationDelay: '1.6s' }}>
+          <h2 className="text-3xl font-bold font-inter text-slate-900 mb-6">
+            Meet the <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Developer</span>
+          </h2>
+        </div>
+        
+        <div className="flex justify-center animate-fade-in" style={{ animationDelay: '1.8s' }}>
+          <div className="w-full max-w-sm">
+            <ProfileCard
+              name="Manogya Guragai"
+              title="AI Developer"
+              handle="manogyaguragai"
+              contactText="Contact Me"
+              avatarUrl="/logo.png"
+              miniAvatarUrl="/logo.png"
+              showUserInfo={true}
+              enableTilt={true}
+              onContactClick={handleContactClick}
+            />
           </div>
         </div>
       </div>
