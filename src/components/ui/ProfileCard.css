@@ -1,3 +1,4 @@
+
 :root {
   --pointer-x: 50%;
   --pointer-y: 50%;
@@ -13,12 +14,12 @@
   --icon: none;
   --behind-gradient: none;
   --inner-gradient: none;
-  --sunpillar-1: rgba(37, 99, 235, 0.3);
-  --sunpillar-2: rgba(59, 130, 246, 0.3);
-  --sunpillar-3: rgba(99, 102, 241, 0.3);
-  --sunpillar-4: rgba(139, 92, 246, 0.3);
-  --sunpillar-5: rgba(168, 85, 247, 0.3);
-  --sunpillar-6: rgba(192, 132, 252, 0.3);
+  --sunpillar-1: #2563eb;
+  --sunpillar-2: #3b82f6;
+  --sunpillar-3: #6366f1;
+  --sunpillar-4: #8b5cf6;
+  --sunpillar-5: #a855f7;
+  --sunpillar-6: #c084fc;
   --sunpillar-clr-1: var(--sunpillar-1);
   --sunpillar-clr-2: var(--sunpillar-2);
   --sunpillar-clr-3: var(--sunpillar-3);
@@ -43,10 +44,10 @@
   background-position: inherit;
   border-radius: inherit;
   transition: all 0.5s ease;
-  filter: contrast(1.2) saturate(0.8) blur(24px);
+  filter: contrast(1.5) saturate(1.5) blur(36px);
   transform: scale(0.8) translate3d(0, 0, 0.1px);
   background-size: 100% 100%;
-  background-image: radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y), rgba(37, 99, 235, calc(var(--card-opacity) * 0.15)) 4%, rgba(37, 99, 235, calc(var(--card-opacity) * 0.1)) 10%, rgba(139, 92, 246, calc(var(--card-opacity) * 0.08)) 50%, transparent 100%);
+  background-image: var(--behind-gradient);
 }
 
 .pc-card-wrapper:hover,
@@ -56,7 +57,7 @@
 
 .pc-card-wrapper:hover::before,
 .pc-card-wrapper.active::before {
-  filter: contrast(1) saturate(1) blur(32px) opacity(0.4);
+  filter: contrast(1) saturate(1.5) blur(40px) opacity(0.8);
   transform: scale(0.9) translate3d(0, 0, 0.1px);
 }
 
@@ -69,18 +70,13 @@
   position: relative;
   background-blend-mode: color-dodge, normal, normal, normal;
   animation: glow-bg 12s linear infinite;
-  box-shadow: rgba(0, 0, 0, 0.1) calc((var(--pointer-from-left) * 4px) - 2px) calc((var(--pointer-from-top) * 8px) - 4px) 16px -3px, 
-              0 8px 32px 0 rgba(37, 99, 235, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.6) calc((var(--pointer-from-left) * 8px) - 2px) calc((var(--pointer-from-top) * 16px) - 4px) 16px -3px;
   transition: transform 1s ease;
   transform: translate3d(0, 0, 0.1px) rotateX(0deg) rotateY(0deg);
   background-size: 100% 100%;
   background-position: 0 0, 0 0, 50% 50%, 0 0;
-  background-image: radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y), rgba(37, 99, 235, calc(var(--card-opacity) * 0.12)) 4%, rgba(37, 99, 235, calc(var(--card-opacity) * 0.08)) 10%, rgba(139, 92, 246, calc(var(--card-opacity) * 0.06)) 50%, transparent 100%), 
-                    radial-gradient(35% 52% at 55% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 100%), 
-                    radial-gradient(100% 100% at 50% 50%, rgba(139, 92, 246, 0.06) 1%, transparent 76%), 
-                    conic-gradient(from 124deg at 50% 50%, rgba(37, 99, 235, 0.1) 0%, rgba(139, 92, 246, 0.1) 40%, rgba(139, 92, 246, 0.1) 60%, rgba(37, 99, 235, 0.1) 100%);
+  background-image: radial-gradient(farthest-side circle at var(--pointer-x) var(--pointer-y), hsla(222, 47%, 40%, var(--card-opacity)) 4%, hsla(222, 47%, 30%, calc(var(--card-opacity) * 0.75)) 10%, hsla(263, 60%, 45%, calc(var(--card-opacity) * 0.5)) 50%, hsla(263, 60%, 35%, 0) 100%), radial-gradient(35% 52% at 55% 20%, #2563eb40 0%, #073aff00 100%), radial-gradient(100% 100% at 50% 50%, #8b5cf640 1%, #073aff00 76%), conic-gradient(from 124deg at 50% 50%, #2563eb60 0%, #8b5cf660 40%, #8b5cf660 60%, #2563eb60 100%);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .pc-card:hover,
@@ -100,10 +96,9 @@
 .pc-inside {
   inset: 1px;
   position: absolute;
-  background-image: linear-gradient(145deg, rgba(248, 250, 252, 0.95) 0%, rgba(241, 245, 249, 0.9) 100%);
-  background-color: rgba(248, 250, 252, 0.9);
+  background-image: var(--inner-gradient);
+  background-color: rgba(0, 0, 0, 0.85);
   transform: translate3d(0, 0, 0.01px);
-  backdrop-filter: blur(20px);
 }
 
 .pc-shine {
@@ -113,9 +108,9 @@
   mask-size: 30px 30px;
   mask-position: center;
   transition: filter 0.6s ease;
-  filter: brightness(0.2) contrast(1) saturate(0.4) opacity(0.1);
+  filter: brightness(0.4) contrast(1.2) saturate(0.6) opacity(0.2);
   animation: holo-bg 18s linear infinite;
-  mix-blend-mode: overlay;
+  mix-blend-mode: color-dodge;
 }
 
 .pc-shine,
@@ -128,11 +123,9 @@
   background: transparent;
   background-size: cover;
   background-position: center;
-  background-image: repeating-linear-gradient(0deg, var(--sunpillar-clr-1) calc(var(--space) * 1), var(--sunpillar-clr-2) calc(var(--space) * 2), var(--sunpillar-clr-3) calc(var(--space) * 3), var(--sunpillar-clr-4) calc(var(--space) * 4), var(--sunpillar-clr-5) calc(var(--space) * 5), var(--sunpillar-clr-6) calc(var(--space) * 6), var(--sunpillar-clr-1) calc(var(--space) * 7)), 
-                      repeating-linear-gradient(var(--angle), rgba(248, 250, 252, 0.8) 0%, rgba(37, 99, 235, 0.15) 3.8%, rgba(59, 130, 246, 0.15) 4.5%, rgba(37, 99, 235, 0.15) 5.2%, rgba(248, 250, 252, 0.8) 10%, rgba(248, 250, 252, 0.8) 12%), 
-                      radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y), rgba(0, 0, 0, 0.02) 12%, rgba(0, 0, 0, 0.04) 20%, rgba(0, 0, 0, 0.06) 120%);
+  background-image: repeating-linear-gradient(0deg, var(--sunpillar-clr-1) calc(var(--space) * 1), var(--sunpillar-clr-2) calc(var(--space) * 2), var(--sunpillar-clr-3) calc(var(--space) * 3), var(--sunpillar-clr-4) calc(var(--space) * 4), var(--sunpillar-clr-5) calc(var(--space) * 5), var(--sunpillar-clr-6) calc(var(--space) * 6), var(--sunpillar-clr-1) calc(var(--space) * 7)), repeating-linear-gradient(var(--angle), #0e152e 0%, hsl(222, 47%, 50%) 3.8%, hsl(222, 47%, 56%) 4.5%, hsl(222, 47%, 50%) 5.2%, #0e152e 10%, #0e152e 12%), radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y), hsla(0, 0%, 0%, 0.1) 12%, hsla(0, 0%, 0%, 0.15) 20%, hsla(0, 0%, 0%, 0.25) 120%);
   background-position: 0 var(--background-y), var(--background-x) var(--background-y), center;
-  background-blend-mode: color, soft-light;
+  background-blend-mode: color, hard-light;
   background-size: 500% 500%, 300% 300%, 200% 200%;
   background-repeat: repeat;
 }
@@ -148,7 +141,7 @@
 
 .pc-card:hover .pc-shine,
 .pc-card.active .pc-shine {
-  filter: brightness(0.3) contrast(1.1) saturate(0.5);
+  filter: brightness(0.6) contrast(1.3) saturate(0.7);
   animation: none;
 }
 
@@ -156,33 +149,31 @@
 .pc-card.active .pc-shine::before,
 .pc-card:hover .pc-shine::after,
 .pc-card.active .pc-shine::after {
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
 .pc-shine::before {
-  background-image: linear-gradient(45deg, var(--sunpillar-4), var(--sunpillar-5), var(--sunpillar-6), var(--sunpillar-1), var(--sunpillar-2), var(--sunpillar-3)), 
-                    radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(37, 99, 235, 0.15) 0%, rgba(139, 92, 246, 0.05) 90%), 
-                    var(--grain);
+  background-image: linear-gradient(45deg, var(--sunpillar-4), var(--sunpillar-5), var(--sunpillar-6), var(--sunpillar-1), var(--sunpillar-2), var(--sunpillar-3)), radial-gradient(circle at var(--pointer-x) var(--pointer-y), hsl(222, 47%, 60%) 0%, hsla(263, 60%, 20%, 0.2) 90%), var(--grain);
   background-size: 250% 250%, 100% 100%, 220px 220px;
   background-position: var(--pointer-x) var(--pointer-y), center, calc(var(--pointer-x) * 0.01) calc(var(--pointer-y) * 0.01);
-  background-blend-mode: overlay;
-  filter: brightness(calc(1.2 - var(--pointer-from-center) * 0.3)) contrast(calc(var(--pointer-from-center) + 1.2)) saturate(calc(0.3 + var(--pointer-from-center) * 0.2));
-  mix-blend-mode: overlay;
+  background-blend-mode: color-dodge;
+  filter: brightness(calc(1.5 - var(--pointer-from-center) * 0.5)) contrast(calc(var(--pointer-from-center) + 1.5)) saturate(calc(0.4 + var(--pointer-from-center) * 0.3));
+  mix-blend-mode: luminosity;
 }
 
 .pc-shine::after {
   background-position: 0 var(--background-y), calc(var(--background-x) * 0.4) calc(var(--background-y) * 0.5), center;
   background-size: 200% 300%, 700% 700%, 100% 100%;
-  mix-blend-mode: soft-light;
-  filter: brightness(0.5) contrast(1.1);
+  mix-blend-mode: difference;
+  filter: brightness(0.7) contrast(1.3);
 }
 
 .pc-glare {
   transform: translate3d(0, 0, 1.1px);
   overflow: hidden;
-  background-image: radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y), rgba(37, 99, 235, 0.08) 12%, rgba(139, 92, 246, 0.05) 90%);
+  background-image: radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y), hsl(222, 47%, 60%) 12%, hsla(263, 60%, 20%, 0.6) 90%);
   mix-blend-mode: overlay;
-  filter: brightness(0.8) contrast(1.05);
+  filter: brightness(0.7) contrast(1.1);
   z-index: 4;
 }
 
@@ -201,9 +192,9 @@
   bottom: 55px;
   opacity: 1;
   z-index: 15;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15)) 
-          drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1))
-          drop-shadow(0 5px 10px rgba(37, 99, 235, 0.05));
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4)) 
+          drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2))
+          drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
   transition: all 0.3s ease;
 }
 
@@ -214,9 +205,9 @@
              scale(1.15) 
              translateX(calc(var(--pointer-from-left) * -10px + 5px))
              translateY(calc(var(--pointer-from-top) * -10px + 5px));
-  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.2)) 
-          drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15))
-          drop-shadow(0 8px 15px rgba(37, 99, 235, 0.1));
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5)) 
+          drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3))
+          drop-shadow(0 8px 15px rgba(0, 0, 0, 0.2));
 }
 
 /* Remove the backdrop blur that was masking the 3D effect */
@@ -229,22 +220,16 @@
   bottom: 20px;
   left: 20px;
   right: 20px;
-  z-index: 20;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(30px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 12px 14px;
   pointer-events: auto;
-  box-shadow: 0 8px 32px 0 rgba(37, 99, 235, 0.1);
-  background-image: url('/hori.png');
-  background-size: 80px 80px;
-  background-repeat: repeat;
-  background-position: center;
-  background-blend-mode: overlay;
 }
 
 .pc-user-details {
@@ -258,9 +243,8 @@
   height: 48px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid rgba(37, 99, 235, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
-  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1);
 }
 
 .pc-mini-avatar img {
@@ -279,41 +263,35 @@
 
 .pc-handle {
   font-size: 14px;
-  font-weight: 600;
-  color: rgba(30, 41, 59, 0.9);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .pc-status {
   font-size: 14px;
-  color: rgba(71, 85, 105, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 .pc-contact-btn {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(139, 92, 246, 0.9));
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  padding: 10px 18px;
+  background: linear-gradient(135deg, #2563eb, #8b5cf6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 16px;
   font-size: 14px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2), 
-              inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
 }
 
 .pc-contact-btn:hover {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 1), rgba(139, 92, 246, 1));
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3), 
-              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2);
+  transition: all 0.2s ease;
 }
 
 .pc-content {
@@ -323,7 +301,7 @@
   position: relative;
   transform: translate3d(calc(var(--pointer-from-left) * -6px + 3px), calc(var(--pointer-from-top) * -6px + 3px), 0.1px) !important;
   z-index: 5;
-  mix-blend-mode: normal;
+  mix-blend-mode: luminosity;
 }
 
 .pc-details {
@@ -335,16 +313,15 @@
 }
 
 .pc-details h3 {
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
   font-size: min(4svh, 4em);
   margin: 0;
-  background-image: linear-gradient(to bottom, rgba(30, 41, 59, 0.9), rgba(37, 99, 235, 0.8));
+  background-image: linear-gradient(to bottom, #fff, #8b5cf6);
   background-size: 1em 1.5em;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  text-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
 }
 
 .pc-details p {
@@ -355,12 +332,11 @@
   font-size: 20px;
   margin: 0 auto;
   width: min-content;
-  background-image: linear-gradient(to bottom, rgba(71, 85, 105, 0.8), rgba(37, 99, 235, 0.7));
+  background-image: linear-gradient(to bottom, #fff, #2563eb);
   background-size: 1em 1.5em;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  text-shadow: 0 1px 3px rgba(37, 99, 235, 0.1);
 }
 
 @keyframes glow-bg {
