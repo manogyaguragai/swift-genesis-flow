@@ -48,26 +48,6 @@ export const Footer: React.FC = () => {
             <p className="text-slate-300 font-ibm leading-relaxed max-w-md mb-6 text-sm sm:text-base">
               Revolutionizing recruitment with intelligent resume screening, personalized interview questions, and smart candidate recommendations.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com"
-                className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-primary/20 transition-all duration-300 border border-white/10"
-              >
-                <Github className="w-4 sm:w-5 h-4 sm:h-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-primary/20 transition-all duration-300 border border-white/10"
-              >
-                <Linkedin className="w-4 sm:w-5 h-4 sm:h-5" />
-              </a>
-              <a
-                href="mailto:contact@kandidex.ai"
-                className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center text-slate-300 hover:text-white hover:bg-primary/20 transition-all duration-300 border border-white/10"
-              >
-                <Mail className="w-4 sm:w-5 h-4 sm:h-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
