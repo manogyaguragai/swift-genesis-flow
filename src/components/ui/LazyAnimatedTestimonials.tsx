@@ -21,14 +21,17 @@ const TestimonialsFallback = () => (
     <div className="grid grid-cols-1 gap-20 md:grid-cols-2">
       <div className="relative h-80 w-full">
         <Skeleton className="h-full w-full rounded-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl animate-pulse" />
       </div>
       <div className="flex flex-col justify-between py-4">
         <div>
           <Skeleton className="h-8 w-48 mb-2" />
           <Skeleton className="h-4 w-32 mb-8" />
-          <Skeleton className="h-6 w-full mb-2" />
-          <Skeleton className="h-6 w-full mb-2" />
-          <Skeleton className="h-6 w-3/4" />
+          <div className="space-y-2">
+            <Skeleton className="h-5 w-full" />
+            <Skeleton className="h-5 w-full" />
+            <Skeleton className="h-5 w-3/4" />
+          </div>
         </div>
         <div className="flex gap-4 pt-12">
           <Skeleton className="h-7 w-7 rounded-full" />
@@ -41,6 +44,7 @@ const TestimonialsFallback = () => (
 
 export const LazyAnimatedTestimonials: React.FC<LazyAnimatedTestimonialsProps> = (props) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,10 +52,15 @@ export const LazyAnimatedTestimonials: React.FC<LazyAnimatedTestimonialsProps> =
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          // Preload images when component becomes visible
+          props.testimonials.forEach(testimonial => {
+            const img = new Image();
+            img.src = testimonial.src;
+          });
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '50px' }
     );
 
     if (containerRef.current) {
@@ -59,13 +68,16 @@ export const LazyAnimatedTestimonials: React.FC<LazyAnimatedTestimonialsProps> =
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [props.testimonials]);
 
   return (
     <div ref={containerRef}>
       {isVisible ? (
         <Suspense fallback={<TestimonialsFallback />}>
-          <AnimatedTestimonials {...props} />
+          <AnimatedTestimonials 
+            {...props} 
+            onLoad={() => setIsLoaded(true)}
+          />
         </Suspense>
       ) : (
         <TestimonialsFallback />

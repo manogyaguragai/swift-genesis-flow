@@ -15,11 +15,14 @@ type Testimonial = {
 export const AnimatedTestimonials = ({
   testimonials,
   autoplay = false,
+  onLoad,
 }: {
   testimonials: Testimonial[];
   autoplay?: boolean;
+  onLoad?: () => void;
 }) => {
   const [active, setActive] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState<Set<number>>(new Set());
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -31,6 +34,17 @@ export const AnimatedTestimonials = ({
 
   const isActive = (index: number) => {
     return index === active;
+  };
+
+  const handleImageLoad = (index: number) => {
+    setImagesLoaded(prev => {
+      const newSet = new Set(prev);
+      newSet.add(index);
+      if (newSet.size === testimonials.length && onLoad) {
+        onLoad();
+      }
+      return newSet;
+    });
   };
 
   useEffect(() => {
@@ -91,17 +105,29 @@ export const AnimatedTestimonials = ({
                   }}
                   className="absolute inset-0 origin-bottom"
                 >
-                  <img
-                    src={testimonial.src}
-                    alt={testimonial.name}
-                    width={500}
-                    height={500}
-                    draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center shadow-lg"
-                    onError={(e) => {
-                      e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=2563eb&color=ffffff&size=500`;
-                    }}
-                  />
+                  <div className="relative h-full w-full">
+                    {!imagesLoaded.has(index) && (
+                      <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 rounded-3xl animate-pulse flex items-center justify-center">
+                        <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+                      </div>
+                    )}
+                    <img
+                      src={testimonial.src}
+                      alt={testimonial.name}
+                      width={500}
+                      height={500}
+                      draggable={false}
+                      loading="lazy"
+                      className={`h-full w-full rounded-3xl object-cover object-center shadow-lg transition-opacity duration-300 ${
+                        imagesLoaded.has(index) ? 'opacity-100' : 'opacity-0'
+                      }`}
+                      onLoad={() => handleImageLoad(index)}
+                      onError={(e) => {
+                        e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=2563eb&color=ffffff&size=500`;
+                        handleImageLoad(index);
+                      }}
+                    />
+                  </div>
                 </motion.div>
               ))}
             </AnimatePresence>
