@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CheckCircle, Users, Brain, Target, Zap } from 'lucide-react';
 import SpotlightCard from '../ui/SpotlightCard';
@@ -55,7 +54,7 @@ const SolutionSummarySection: React.FC = () => {
           <h2 className="text-4xl lg:text-5xl font-bold font-inter text-slate-900 mb-6">
             Complete HR Solution with <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Kandidex</span>
           </h2>
-          <p className="text-xl text-slate-600 font-ibm max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg-thin text-slate-600 font-open-sans-thin font-thin max-w-3xl mx-auto leading-relaxed">
             Transform your hiring process with our comprehensive AI-powered platform that handles everything from resume screening to candidate recommendations.
           </p>
         </div>
@@ -71,7 +70,7 @@ const SolutionSummarySection: React.FC = () => {
                       <feature.icon className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-lg font-bold font-inter text-slate-900 mb-2">{feature.title}</h3>
-                    <p className="text-slate-600 font-ibm text-sm leading-relaxed flex-1">{feature.description}</p>
+                    <p className="text-slate-600 font-open-sans-thin font-thin text-sm-thin leading-relaxed flex-1">{feature.description}</p>
                   </div>
                 </GlareCard>
               </div>
@@ -91,7 +90,7 @@ const SolutionSummarySection: React.FC = () => {
                     <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-success to-emerald-600 rounded-full flex items-center justify-center">
                       <CheckCircle className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-slate-700 font-ibm">{benefit}</span>
+                    <span className="text-slate-700 font-open-sans-thin font-thin text-base-thin">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -105,7 +104,7 @@ const SolutionSummarySection: React.FC = () => {
             <h3 className="text-2xl font-bold font-inter text-slate-900 mb-4">
               Ready to revolutionize your hiring process?
             </h3>
-            <p className="text-slate-600 font-ibm mb-6 max-w-2xl mx-auto">
+            <p className="text-slate-600 font-open-sans-thin font-thin text-base-thin mb-6 max-w-2xl mx-auto">
               Join hundreds of companies that have transformed their recruitment with Kandidex's AI-powered solutions.
             </p>
             <a href="/screen-candidates">

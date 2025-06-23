@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -21,8 +20,16 @@ export default {
     extend: {
       fontFamily: {
         'open-sans': ['Open Sans', 'sans-serif'],
+        'open-sans-thin': ['Open Sans', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
         'ibm': ['IBM Plex Sans', 'sans-serif'],
+      },
+      fontSize: {
+        'xs-thin': ['0.6875rem', { lineHeight: '1rem', fontWeight: '100' }], // 11px
+        'sm-thin': ['0.8125rem', { lineHeight: '1.25rem', fontWeight: '100' }], // 13px  
+        'base-thin': ['0.9375rem', { lineHeight: '1.5rem', fontWeight: '100' }], // 15px
+        'lg-thin': ['1.0625rem', { lineHeight: '1.75rem', fontWeight: '100' }], // 17px
+        'xl-thin': ['1.1875rem', { lineHeight: '1.75rem', fontWeight: '100' }], // 19px
       },
       colors: {
         border: "hsl(var(--border))",

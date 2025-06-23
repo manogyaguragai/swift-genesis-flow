@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { FeatureCards } from '../ui/feature-cards';
 
@@ -22,7 +21,7 @@ export const WhyChooseSection: React.FC = () => {
           <h2 className="text-4xl lg:text-5xl font-bold font-inter text-slate-900 mb-6">
             Why Choose Kandidex?
           </h2>
-          <p className="text-lg text-slate-600 font-ibm max-w-3xl mx-auto">
+          <p className="text-lg-thin text-slate-600 font-open-sans-thin font-thin max-w-3xl mx-auto">
             Experience the future of recruitment with our AI-powered platform that transforms how you find and hire top talent
           </p>
         </div>

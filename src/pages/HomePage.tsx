@@ -7,7 +7,7 @@ import SolutionSummarySection from '../components/Home/SolutionSummarySection';
 
 const HomePage: React.FC = () => {
   return (
-    <div className="font-open-sans">
+    <div className="font-open-sans-thin">
       <HeroSection />
       <WhyChooseSection />
       <TestimonialsSection />

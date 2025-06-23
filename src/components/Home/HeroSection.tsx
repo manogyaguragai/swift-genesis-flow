@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -52,7 +51,7 @@ export const HeroSection: React.FC = () => {
                 <span className="text-slate-900">using </span>
                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">AI</span>
               </h1>
-              <p className="text-xl text-slate-600 font-ibm mt-6 leading-relaxed animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <p className="text-lg-thin text-slate-600 font-open-sans-thin mt-6 leading-relaxed animate-fade-in font-thin" style={{ animationDelay: '0.2s' }}>
                 Transform your recruitment process with intelligent resume screening, instant candidate ranking, and AI-generated interview questions. Make hiring decisions faster, smarter, and more accurate.
               </p>
             </div>
@@ -78,15 +77,15 @@ export const HeroSection: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-8 pt-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
               <div className="text-center sm:text-left">
                 <div className="text-3xl font-bold font-inter text-primary">90%</div>
-                <div className="text-sm text-slate-600 font-ibm">Faster Screening</div>
+                <div className="text-sm-thin text-slate-600 font-open-sans-thin font-thin">Faster Screening</div>
               </div>
               <div className="text-center sm:text-left">
                 <div className="text-3xl font-bold font-inter text-secondary">High</div>
-                <div className="text-sm text-slate-600 font-ibm">Accuracy Rate</div>
+                <div className="text-sm-thin text-slate-600 font-open-sans-thin font-thin">Accuracy Rate</div>
               </div>
               <div className="text-center sm:text-left">
                 <div className="text-3xl font-bold font-inter text-purple-600">24/7</div>
-                <div className="text-sm text-slate-600 font-ibm">AI Assistant</div>
+                <div className="text-sm-thin text-slate-600 font-open-sans-thin font-thin">AI Assistant</div>
               </div>
             </div>
           </div>

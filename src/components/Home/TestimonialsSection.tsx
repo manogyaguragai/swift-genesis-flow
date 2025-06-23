@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { LazyAnimatedTestimonials } from '../ui/LazyAnimatedTestimonials';
 
@@ -49,7 +48,7 @@ export const TestimonialsSection: React.FC = () => {
           <h2 className="text-4xl lg:text-5xl font-bold font-inter text-slate-900 mb-6">
             What Our Users Say
           </h2>
-          <p className="text-lg text-slate-600 font-ibm max-w-3xl mx-auto">
+          <p className="text-lg-thin text-slate-600 font-open-sans-thin font-thin max-w-3xl mx-auto">
             Join HR professionals who have transformed their hiring process with Kandidex
           </p>
         </div>

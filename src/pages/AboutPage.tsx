@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Users, Brain, Target, Shield, Award, Sparkles } from 'lucide-react';
 import { GlareCard } from '../components/ui/glare-card';
@@ -40,7 +39,7 @@ const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 animate-fade-in">
+    <div className="pt-32 min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 animate-fade-in font-open-sans-thin">
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
@@ -52,7 +51,7 @@ const AboutPage: React.FC = () => {
             About <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Kandidex</span>
           </h1>
           <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-glass border border-white/50 animate-scale-in max-w-6xl mx-auto" style={{ animationDelay: '0.2s' }}>
-            <p className="text-xl text-slate-600 font-ibm leading-relaxed">
+            <p className="text-lg-thin text-slate-600 font-open-sans-thin font-thin leading-relaxed">
               Kandidex is revolutionizing the recruitment industry with AI-powered hiring solutions. 
               Our platform helps HR professionals make smarter, faster decisions while reducing bias 
               and improving candidate experience. We believe that the right talent can transform 
@@ -69,7 +68,7 @@ const AboutPage: React.FC = () => {
                 <GlareCard>
                   <div className="p-6 text-center h-full flex flex-col justify-center">
                     <div className="text-3xl font-bold text-primary mb-2">{stat.value}</div>
-                    <div className="text-slate-600 font-ibm">{stat.label}</div>
+                    <div className="text-slate-600 font-open-sans-thin font-thin text-sm-thin">{stat.label}</div>
                   </div>
                 </GlareCard>
               </div>
@@ -87,7 +86,7 @@ const AboutPage: React.FC = () => {
                 </div>
               </div>
               <h2 className="text-3xl font-bold font-inter text-slate-900 mb-6">Our Mission</h2>
-              <p className="text-lg text-slate-700 font-ibm leading-relaxed">
+              <p className="text-lg-thin text-slate-700 font-open-sans-thin font-thin leading-relaxed">
                 To democratize talent acquisition by making advanced AI hiring tools accessible to organizations 
                 of all sizes. We envision a future where every hiring decision is data-driven, unbiased, 
                 and leads to better outcomes for both employers and candidates.
