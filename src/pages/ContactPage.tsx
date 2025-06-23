@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Clock, Send, Users, MessageSquare, Linkedin } from 'lucide-react';
+import { Mail, Clock, Send, MessageSquare, Linkedin } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
 
 const ContactPage: React.FC = () => {
@@ -36,17 +36,17 @@ const ContactPage: React.FC = () => {
             Contact <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Us</span>
           </h1>
           <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-glass border border-white/50 animate-scale-in" style={{ animationDelay: '0.2s' }}>
-            <p className="text-lg text-slate-600 font-ibm leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg-thin text-slate-600 font-open-sans-thin font-thin leading-relaxed max-w-3xl mx-auto">
               Get in touch with our team to learn more about how Kandidex can transform your hiring process. 
               We're here to help you find the perfect candidates with AI-powered precision.
             </p>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-glass border border-white/50">
+          <div className="animate-fade-in h-full" style={{ animationDelay: '0.4s' }}>
+            <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-glass border border-white/50 h-full flex flex-col">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
                   <Send className="w-5 h-5 text-white" />
@@ -55,15 +55,15 @@ const ContactPage: React.FC = () => {
               </div>
               
               {state.succeeded ? (
-                <div className="text-center py-8">
+                <div className="text-center py-8 flex-1 flex flex-col justify-center">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <MessageSquare className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Thank you for your message!</h3>
-                  <p className="text-slate-600">We'll get back to you within 24 hours.</p>
+                  <p className="text-slate-600 font-open-sans-thin font-thin">We'll get back to you within 24 hours.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6 flex-1">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-2">First Name</label>
@@ -136,7 +136,7 @@ const ContactPage: React.FC = () => {
                     />
                   </div>
                   
-                  <div>
+                  <div className="flex-1">
                     <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">Message</label>
                     <textarea
                       id="message"
@@ -168,29 +168,29 @@ const ContactPage: React.FC = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-6 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="space-y-6 animate-fade-in h-full flex flex-col" style={{ animationDelay: '0.6s' }}>
             {contactInfo.map((info, index) => (
-              <div key={index} className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-glass border border-white/50 hover:shadow-glass-lg transition-all duration-300 group animate-scale-in" style={{ animationDelay: `${0.8 + index * 0.1}s` }}>
+              <div key={index} className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-glass border border-white/50 hover:shadow-glass-lg transition-all duration-300 group animate-scale-in flex-1" style={{ animationDelay: `${0.8 + index * 0.1}s` }}>
                 {info.action ? (
-                  <a href={info.action} className="flex items-start space-x-4">
+                  <a href={info.action} className="flex items-start space-x-4 h-full">
                     <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-glow-blue group-hover:shadow-glow-purple transition-all duration-300">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h3 className="text-lg font-bold font-inter text-slate-900 mb-1">{info.title}</h3>
                       <p className="text-primary font-medium mb-1">{info.content}</p>
-                      <p className="text-sm text-slate-600 font-ibm">{info.description}</p>
+                      <p className="text-sm-thin text-slate-600 font-open-sans-thin font-thin">{info.description}</p>
                     </div>
                   </a>
                 ) : (
-                  <div className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4 h-full">
                     <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-glow-blue">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h3 className="text-lg font-bold font-inter text-slate-900 mb-1">{info.title}</h3>
                       <p className="text-slate-700 font-medium mb-1">{info.content}</p>
-                      <p className="text-sm text-slate-600 font-ibm">{info.description}</p>
+                      <p className="text-sm-thin text-slate-600 font-open-sans-thin font-thin">{info.description}</p>
                     </div>
                   </div>
                 )}
@@ -198,37 +198,22 @@ const ContactPage: React.FC = () => {
             ))}
 
             {/* LinkedIn Button */}
-            <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-glass border border-white/50 hover:shadow-glass-lg transition-all duration-300 group animate-scale-in" style={{ animationDelay: '1s' }}>
+            <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-glass border border-white/50 hover:shadow-glass-lg transition-all duration-300 group animate-scale-in flex-1" style={{ animationDelay: '1s' }}>
               <a 
                 href="https://www.linkedin.com/in/manogya-guragai-1bb318200/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-start space-x-4 group"
+                className="flex items-start space-x-4 group h-full"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-glow-blue group-hover:shadow-glow-purple transition-all duration-300">
                   <Linkedin className="w-6 h-6 text-white" />
                 </div>
-                <div>
+                <div className="flex-1">
                   <h3 className="text-lg font-bold font-inter text-slate-900 mb-1">Connect on LinkedIn</h3>
                   <p className="text-primary font-medium mb-1">Manogya Guragai</p>
-                  <p className="text-sm text-slate-600 font-ibm">Let's connect professionally</p>
+                  <p className="text-sm-thin text-slate-600 font-open-sans-thin font-thin">Let's connect professionally</p>
                 </div>
               </a>
-            </div>
-
-            {/* Additional Info */}
-            <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-6 border border-primary/10 shadow-glass animate-fade-in" style={{ animationDelay: '1.2s' }}>
-              <div className="flex items-center space-x-3 mb-4">
-                <Users className="w-6 h-6 text-primary" />
-                <h3 className="text-lg font-bold font-inter text-slate-900">Ready to Get Started?</h3>
-              </div>
-              <p className="text-slate-600 font-ibm mb-4">
-                Learn more about how Kandidex can revolutionize your hiring process. 
-                Our AI-powered platform helps you find the perfect candidates faster and more efficiently.
-              </p>
-              <div className="bg-gradient-to-r from-primary to-secondary text-white py-2 px-6 rounded-lg font-semibold text-center">
-                <span>Experience the Future of Hiring</span>
-              </div>
             </div>
           </div>
         </div>
