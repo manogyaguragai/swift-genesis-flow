@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { CheckCircle, Users, Brain, Target, Zap } from 'lucide-react';
+import { Check, Users, Brain, Target, Zap } from 'lucide-react';
 import SpotlightCard from '../ui/SpotlightCard';
 import { GlareCard } from '../ui/glare-card';
 
@@ -77,7 +78,7 @@ const SolutionSummarySection: React.FC = () => {
             ))}
           </div>
 
-          {/* Benefits List - Updated with SpotlightCard */}
+          {/* Benefits List - Updated with SpotlightCard and proper Check icons */}
           <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <SpotlightCard 
               className="p-8" 
@@ -87,8 +88,8 @@ const SolutionSummarySection: React.FC = () => {
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center space-x-3 animate-slide-in-right will-change-transform" style={{ animationDelay: `${0.8 + index * 0.1}s` }}>
-                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-success to-emerald-600 rounded-full flex items-center justify-center">
-                      <CheckCircle className="w-4 h-4 text-white" />
+                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-glow-blue">
+                      <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-slate-700 font-open-sans-thin font-thin text-base-thin">{benefit}</span>
                   </div>
