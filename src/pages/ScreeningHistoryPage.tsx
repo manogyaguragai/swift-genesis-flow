@@ -119,7 +119,7 @@ const ScreeningHistoryPage: React.FC = () => {
         <div className="absolute top-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-0 left-0 w-56 h-56 sm:w-80 sm:h-80 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        <div className="relative z-10 w-full px-4 sm:px-6 py-6 sm:py-8">
           {/* Header */}
           <div className="mb-6 sm:mb-8 animate-fade-in">
             {/* <h1 className="text-2xl sm:text-3xl font-bold font-inter text-slate-900 mb-2">
@@ -131,7 +131,7 @@ const ScreeningHistoryPage: React.FC = () => {
           </div>
 
           {/* Date Filter Card */}
-          <div className="bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-glass border border-white/50 p-4 sm:p-6 mb-6 sm:mb-8 animate-fade-in">
+          <div className="bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-glass border border-white/50 p-4 sm:p-6 mb-6 sm:mb-8 animate-fade-in max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
               <div className="flex items-center space-x-3 sm:space-x-4">
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
@@ -169,7 +169,7 @@ const ScreeningHistoryPage: React.FC = () => {
           </div>
 
           {/* Main Content - Updated grid layout for wider right column */}
-          <div className="grid grid-cols-1 xl:grid-cols-5 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 xl:grid-cols-5 gap-6 sm:gap-8 max-w-7xl mx-auto">
             {/* Left Side - Screening Runs List (smaller width) */}
             <div className="xl:col-span-2">
               <div className="bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-glass border border-white/50 p-4 sm:p-6">

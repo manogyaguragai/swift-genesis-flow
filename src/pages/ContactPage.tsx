@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Clock, Send, Users, MessageSquare } from 'lucide-react';
+import { Mail, Clock, Send, Users, MessageSquare, Linkedin } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
 
 const ContactPage: React.FC = () => {
@@ -36,7 +36,7 @@ const ContactPage: React.FC = () => {
             Contact <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Us</span>
           </h1>
           <div className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-glass border border-white/50 animate-scale-in" style={{ animationDelay: '0.2s' }}>
-            <p className="text-xl text-slate-600 font-ibm leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg text-slate-600 font-ibm leading-relaxed max-w-3xl mx-auto">
               Get in touch with our team to learn more about how Kandidex can transform your hiring process. 
               We're here to help you find the perfect candidates with AI-powered precision.
             </p>
@@ -196,6 +196,25 @@ const ContactPage: React.FC = () => {
                 )}
               </div>
             ))}
+
+            {/* LinkedIn Button */}
+            <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-glass border border-white/50 hover:shadow-glass-lg transition-all duration-300 group animate-scale-in" style={{ animationDelay: '1s' }}>
+              <a 
+                href="https://www.linkedin.com/in/manogya-guragai-1bb318200/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-start space-x-4 group"
+              >
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-glow-blue group-hover:shadow-glow-purple transition-all duration-300">
+                  <Linkedin className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold font-inter text-slate-900 mb-1">Connect on LinkedIn</h3>
+                  <p className="text-primary font-medium mb-1">Manogya Guragai</p>
+                  <p className="text-sm text-slate-600 font-ibm">Let's connect professionally</p>
+                </div>
+              </a>
+            </div>
 
             {/* Additional Info */}
             <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-6 border border-primary/10 shadow-glass animate-fade-in" style={{ animationDelay: '1.2s' }}>
