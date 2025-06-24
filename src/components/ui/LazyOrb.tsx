@@ -10,10 +10,6 @@ interface LazyOrbProps {
   forceHoverState?: boolean;
 }
 
-const OrbFallback = () => (
-  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full animate-pulse" />
-);
-
 export const LazyOrb: React.FC<LazyOrbProps> = (props) => {
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,11 +35,11 @@ export const LazyOrb: React.FC<LazyOrbProps> = (props) => {
   return (
     <div ref={containerRef} className="w-full h-full">
       {isVisible ? (
-        <Suspense fallback={<OrbFallback />}>
+        <Suspense fallback={<div className="w-full h-full" />}>
           <Orb {...props} />
         </Suspense>
       ) : (
-        <OrbFallback />
+        <div className="w-full h-full" />
       )}
     </div>
   );
