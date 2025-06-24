@@ -124,36 +124,49 @@
 
   body {
     @apply bg-background text-foreground;
-    font-weight: 400; /* Increased from 300 */
+    font-weight: 300;
   }
 
-  /* Enhanced font weight classes */
-  .font-thin {
+  /* Enhanced font weight classes for paragraph text only */
+  p.font-thin, .font-thin p {
     font-weight: 200 !important; /* Increased from 100 */
   }
 
-  .font-light {
+  p.font-light, .font-light p {
     font-weight: 400 !important; /* Increased from 300 */
   }
 
-  .font-normal {
+  p.font-normal, .font-normal p {
     font-weight: 500 !important; /* Increased from 400 */
   }
 
+  /* Keep original font weights for headings and other elements */
+  .font-thin {
+    font-weight: 100;
+  }
+
+  .font-light {
+    font-weight: 300;
+  }
+
+  .font-normal {
+    font-weight: 400;
+  }
+
   .font-medium {
-    font-weight: 600 !important; /* Increased from 500 */
+    font-weight: 500;
   }
 
   .font-semibold {
-    font-weight: 700 !important; /* Increased from 600 */
+    font-weight: 600;
   }
 
   .font-bold {
-    font-weight: 800 !important; /* Increased from 700 */
+    font-weight: 700;
   }
 
   .font-extrabold {
-    font-weight: 900 !important; /* Increased from 800 */
+    font-weight: 800;
   }
 
   /* Performance optimizations */
