@@ -1,56 +1,18 @@
-# Welcome to your Lovable project
 
-## Project info
+# Kandidex - AI-Powered HR Solutions
 
-**URL**: https://lovable.dev/projects/3c16d359-6a73-4bc7-a9ba-196e5cb26cab
+## Project Overview
 
-## How can I edit this code?
+Kandidex is an intelligent HR management system that revolutionizes recruitment through AI-powered resume screening, personalized interview questions, and smart candidate recommendations.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Resume Screening**: Advanced AI algorithms to analyze and rank resumes
+- **Interview Questions**: Personalized interview questions based on job requirements
+- **Candidate Ranking**: Smart ranking system for optimal candidate selection
+- **Alternative Finder**: Discover alternative candidates that match your criteria
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3c16d359-6a73-4bc7-a9ba-196e5cb26cab) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technologies Used
 
 This project is built with:
 
@@ -60,14 +22,78 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Getting Started
 
-Simply open [Lovable](https://lovable.dev/projects/3c16d359-6a73-4bc7-a9ba-196e5cb26cab) and click on Share -> Publish.
+### Prerequisites
 
-## Can I connect a custom domain to my Lovable project?
+Make sure you have Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Yes, you can!
+### Installation
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Follow these steps to set up the project locally:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```sh
+# Step 1: Clone the repository
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory
+cd kandidex
+
+# Step 3: Install the necessary dependencies
+npm install
+
+# Step 4: Start the development server
+npm run dev
+```
+
+The application will be available at `http://localhost:8080`
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+├── pages/              # Application pages
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── services/           # API services
+├── store/              # State management
+└── types/              # TypeScript type definitions
+```
+
+## Development
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+### Code Style
+
+This project follows standard React and TypeScript conventions. Make sure to:
+
+- Use TypeScript for all new files
+- Follow the existing component structure
+- Use Tailwind CSS for styling
+- Implement proper error handling
+
+## Contributing
+
+1. Create a feature branch from main
+2. Make your changes
+3. Test thoroughly
+4. Submit a pull request
+
+## License
+
+© 2025 Kandidex. All rights reserved.
+
+## Contact
+
+For questions or support, please contact the development team.
+
+---
+
+*Developed with ❤️ by the Kandidex team*
