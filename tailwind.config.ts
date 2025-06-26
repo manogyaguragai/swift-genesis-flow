@@ -26,11 +26,11 @@ export default {
         'ibm': ['IBM Plex Sans', 'sans-serif'],
       },
       fontSize: {
-        'xs-thin': ['0.6875rem', { lineHeight: '1rem', fontWeight: '300' }], // Increased paragraph weight from 200
-        'sm-thin': ['0.8125rem', { lineHeight: '1.25rem', fontWeight: '300' }], // Increased paragraph weight from 200
-        'base-thin': ['0.9375rem', { lineHeight: '1.5rem', fontWeight: '300' }], // Increased paragraph weight from 200
-        'lg-thin': ['1.0625rem', { lineHeight: '1.75rem', fontWeight: '300' }], // Increased paragraph weight from 200
-        'xl-thin': ['1.1875rem', { lineHeight: '1.75rem', fontWeight: '300' }], // Increased paragraph weight from 200
+        'xs-thin': ['0.6875rem', { lineHeight: '1rem', fontWeight: '400', color: '#1a1a1a' }],
+        'sm-thin': ['0.8125rem', { lineHeight: '1.25rem', fontWeight: '400', color: '#1a1a1a' }],
+        'base-thin': ['0.9375rem', { lineHeight: '1.5rem', fontWeight: '400', color: '#1a1a1a' }],
+        'lg-thin': ['1.0625rem', { lineHeight: '1.75rem', fontWeight: '400', color: '#1a1a1a' }],
+        'xl-thin': ['1.1875rem', { lineHeight: '1.75rem', fontWeight: '400', color: '#1a1a1a' }],
       },
       colors: {
         border: "hsl(var(--border))",

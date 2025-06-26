@@ -48,7 +48,7 @@ const AboutPage: React.FC = () => {
   };
 
   return (
-    <div className="pt-32 min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 animate-fade-in font-open-sans-thin">
+    <div className="pt-32 min-h-screen bg-texture animate-fade-in font-open-sans-thin">
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
@@ -59,8 +59,8 @@ const AboutPage: React.FC = () => {
           <h1 className="text-5xl lg:text-6xl font-bold font-inter text-slate-900 mb-8 animate-fade-in">
             About <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Kandidex</span>
           </h1>
-          <div className="max-w-4xl mx-auto">
-            <p className="text-xl text-slate-600 font-open-sans-thin font-thin leading-relaxed animate-scale-in" style={{ animationDelay: '0.2s' }}>
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xl text-black font-open-sans-thin font-thin leading-relaxed animate-scale-in" style={{ animationDelay: '0.2s' }}>
               Kandidex is revolutionizing the recruitment industry with AI-powered hiring solutions. 
               Our platform helps HR professionals make smarter, faster decisions while reducing bias 
               and improving candidate experience. We believe that the right talent can transform 
@@ -71,15 +71,15 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="relative z-10 w-full px-6 py-16 bg-white/40 backdrop-blur-sm border-y border-white/50">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative z-10 w-full px-6 py-16 bg-white/20 backdrop-blur-sm border-y border-white/30">
+        <div className="max-w-none mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             {stats.map((stat, index) => (
               <div key={index} className="h-32 animate-scale-in" style={{ animationDelay: `${0.6 + index * 0.1}s` }}>
                 <GlareCard>
                   <div className="p-6 text-center h-full flex flex-col justify-center">
                     <div className="text-3xl font-bold text-primary mb-2">{stat.value}</div>
-                    <div className="text-slate-600 font-open-sans-thin font-thin text-sm-thin">{stat.label}</div>
+                    <div className="text-black font-open-sans-thin font-thin text-sm-thin">{stat.label}</div>
                   </div>
                 </GlareCard>
               </div>
@@ -90,7 +90,7 @@ const AboutPage: React.FC = () => {
 
       {/* Mission Section */}
       <section className="relative z-10 w-full px-6 py-20">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-none mx-auto px-6">
           <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl p-16 border border-primary/10 shadow-glass animate-fade-in" style={{ animationDelay: '1s' }}>
             <div className="text-center">
               <div className="flex justify-center mb-8">
@@ -99,7 +99,7 @@ const AboutPage: React.FC = () => {
                 </div>
               </div>
               <h2 className="text-4xl font-bold font-inter text-slate-900 mb-8">Our Mission</h2>
-              <p className="text-xl text-slate-700 font-open-sans-thin font-thin leading-relaxed max-w-4xl mx-auto">
+              <p className="text-xl text-black font-open-sans-thin font-thin leading-relaxed max-w-5xl mx-auto">
                 To democratize talent acquisition by making advanced AI hiring tools accessible to organizations 
                 of all sizes. We envision a future where every hiring decision is data-driven, unbiased, 
                 and leads to better outcomes for both employers and candidates.
@@ -110,8 +110,8 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="relative z-10 w-full px-6 py-20 bg-gradient-to-br from-slate-100/50 to-blue-100/50">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative z-10 w-full px-6 py-20 bg-gradient-to-br from-slate-100/30 to-blue-100/30">
+        <div className="max-w-none mx-auto px-6">
           <h2 className="text-4xl font-bold font-inter text-slate-900 text-center mb-16 animate-fade-in" style={{ animationDelay: '1.2s' }}>
             Why Choose <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Kandidex?</span>
           </h2>
@@ -123,12 +123,12 @@ const AboutPage: React.FC = () => {
 
       {/* Call to Action Section */}
       <section className="relative z-10 w-full px-6 py-20">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-3xl p-16 border border-primary/20 shadow-glass animate-fade-in" style={{ animationDelay: '1.6s' }}>
             <h2 className="text-3xl font-bold font-inter text-slate-900 mb-6">
               Ready to Transform Your Hiring Process?
             </h2>
-            <p className="text-lg text-slate-700 font-open-sans-thin font-thin leading-relaxed mb-8">
+            <p className="text-lg text-black font-open-sans-thin font-thin leading-relaxed mb-8">
               Experience the power of AI-driven recruitment. Try our candidate screening tool 
               and see how Kandidex can help you find the perfect candidates faster than ever.
             </p>
