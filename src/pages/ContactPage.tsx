@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Mail, Clock, Send, MessageSquare, Linkedin } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
@@ -23,20 +24,27 @@ const ContactPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 min-h-screen bg-texture animate-fade-in">
-      {/* Background decorations */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+    <div className="pt-32 min-h-screen bg-white overflow-hidden animate-fade-in">
+      {/* Background decorations - same as HomePage */}
+      <div className="absolute inset-0 opacity-25">
+        <div className="absolute top-20 left-10 w-4 h-4 border-l-4 border-t-4 border-primary/20 rotate-45"></div>
+        <div className="absolute top-40 right-20 w-6 h-6 border-2 border-secondary/20 rounded-full"></div>
+        <div className="absolute bottom-32 left-32 w-3 h-3 bg-primary/10 rotate-45"></div>
+        <div className="absolute top-1/3 right-10 w-4 h-4 border-r-4 border-b-4 border-primary/15 rotate-12"></div>
+      </div>
 
-      <div className="relative z-10 w-full px-6 py-12">
-        {/* Hero Section */}
-        <div className="text-center mb-16 animate-fade-in">
+      <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl animate-float will-change-transform"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-secondary/20 to-purple-300/20 rounded-full blur-3xl animate-float will-change-transform" style={{ animationDelay: '2s' }}></div>
+
+      <div className="relative z-10 w-full">
+        {/* Hero Section - Full Width */}
+        <div className="w-full px-6 py-12 text-center animate-fade-in">
           <h1 className="text-5xl font-bold font-inter text-slate-900 mb-8">
             Contact <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Us</span>
           </h1>
           <div className="max-w-5xl mx-auto">
             <div className="bg-white/60 backdrop-blur-lg rounded-3xl p-8 shadow-glass border border-white/50 animate-scale-in" style={{ animationDelay: '0.2s' }}>
-              <p className="text-lg-thin text-black font-open-sans-thin font-thin leading-relaxed">
+              <p className="text-lg text-black font-open-sans-thin font-medium leading-relaxed">
                 Get in touch with our team to learn more about how Kandidex can transform your hiring process. 
                 We're here to help you find the perfect candidates with AI-powered precision.
               </p>
@@ -44,7 +52,8 @@ const ContactPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="max-w-none mx-auto px-6">
+        {/* Contact Form and Info Section - Original Width */}
+        <div className="max-w-6xl mx-auto px-6 py-12">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Contact Form */}
             <div className="animate-fade-in h-full" style={{ animationDelay: '0.4s' }}>
@@ -62,7 +71,7 @@ const ContactPage: React.FC = () => {
                       <MessageSquare className="w-8 h-8 text-green-600" />
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-2">Thank you for your message!</h3>
-                    <p className="text-black font-open-sans-thin font-thin">We'll get back to you within 24 hours.</p>
+                    <p className="text-black font-open-sans-thin font-medium">We'll get back to you within 24 hours.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6 flex-1">
@@ -181,7 +190,7 @@ const ContactPage: React.FC = () => {
                       <div className="flex-1">
                         <h3 className="text-lg font-bold font-inter text-slate-900 mb-1">{info.title}</h3>
                         <p className="text-primary font-medium mb-1">{info.content}</p>
-                        <p className="text-sm-thin text-black font-open-sans-thin font-thin">{info.description}</p>
+                        <p className="text-sm text-black font-open-sans-thin font-medium">{info.description}</p>
                       </div>
                     </a>
                   ) : (
@@ -192,7 +201,7 @@ const ContactPage: React.FC = () => {
                       <div className="flex-1">
                         <h3 className="text-lg font-bold font-inter text-slate-900 mb-1">{info.title}</h3>
                         <p className="text-slate-700 font-medium mb-1">{info.content}</p>
-                        <p className="text-sm-thin text-black font-open-sans-thin font-thin">{info.description}</p>
+                        <p className="text-sm text-black font-open-sans-thin font-medium">{info.description}</p>
                       </div>
                     </div>
                   )}
@@ -213,7 +222,7 @@ const ContactPage: React.FC = () => {
                   <div className="flex-1">
                     <h3 className="text-lg font-bold font-inter text-slate-900 mb-1">Connect on LinkedIn</h3>
                     <p className="text-primary font-medium mb-1">Manogya Guragai</p>
-                    <p className="text-sm-thin text-black font-open-sans-thin font-thin">Let's connect professionally</p>
+                    <p className="text-sm text-black font-open-sans-thin font-medium">Let's connect professionally</p>
                   </div>
                 </a>
               </div>
