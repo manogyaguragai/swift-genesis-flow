@@ -129,15 +129,15 @@
 
   /* Enhanced font weight classes for paragraph text only */
   p.font-thin, .font-thin p {
-    font-weight: 200 !important; /* Increased from 100 */
+    font-weight: 300 !important; /* Increased from 200 */
   }
 
   p.font-light, .font-light p {
-    font-weight: 400 !important; /* Increased from 300 */
+    font-weight: 500 !important; /* Increased from 400 */
   }
 
   p.font-normal, .font-normal p {
-    font-weight: 500 !important; /* Increased from 400 */
+    font-weight: 600 !important; /* Increased from 500 */
   }
 
   /* Keep original font weights for headings and other elements */
